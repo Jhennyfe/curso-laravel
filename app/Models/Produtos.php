@@ -2,8 +2,18 @@
 
 namespace App\Models;
 
-// use Illuminate\Contracts\Auth\MustVerifyEmail;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
-use Illuminate\Foundation\Auth\User as Authenticatable;
-use Illuminate\Notifications\Notifiable;
-use Laravel\Sanctum\HasApiTokens;
+use Illuminate\Database\Eloquent\Model;
+
+class Produtos extends Model
+{
+    use HasFactory;
+
+    protected $fillable = [
+        'name' ,
+        'valor',
+        'quantidade',
+    ];
+
+    // Definir outros métodos e relacionamentos relevantes aqui
+}
