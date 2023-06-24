@@ -1,5 +1,5 @@
 @extends('layout.app')
-@section('title','Editar o produto')
+@section('title','Editar produto')
 @section('content')
 
 <h1> Editar o produto {{$produtos->name}} </h1>
@@ -12,11 +12,11 @@
     </ul>
 @endif
 
-<form action="{{ route('produtos.update', $user->id) }}" method="POST">
+<form action="{{ route('produtos.update', $produtos->id) }}" method="POST">
     @method('PUT')
     @csrf
-    <input type="text" name="name" placeholder="Nome: " value="{{ $user->name }}">
-    <input type="email" name="email" placeholder="E-mail: " value="{{ $user->email }}">
-    <input type="password" name="password" placeholder="Senha: ">
+    <input type="text" name="name" placeholder="Nome: " value="{{ $produtos->name }}">
+    <input type="text" name="valor" placeholder="Valor: " value="{{ $produtos->valor }}">
+    <input type="text" name="quantidade" placeholder="Quantidade: " value="{{ $produtos->quantidade }}">
     <button type="submit"> Atualizar </button>
 </form>

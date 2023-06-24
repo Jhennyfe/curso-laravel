@@ -3,7 +3,6 @@
 namespace App\Http\Controllers;
 use App\Models\User;
 use Illuminate\Http\Request;
-use App\Http\Requests\StoreUpdateUserFormRequest;
 use Illuminate\Support\Facades\Route;
 
 
@@ -22,7 +21,7 @@ class ProdutosController extends Controller
 
     public function show($id)
     {
-        if(!$produtos = Produto::find($id))
+        if(!$produtos = Produtos::find($id))
             return redirect()->route('produtos.index');
         
         return view ('produtos.show', compact('produtos'));//compact cria um array da variavel
@@ -32,7 +31,7 @@ class ProdutosController extends Controller
     {
         return view ('produtos.create');
     }
-    public function store(StoreUpdateUserFormRequest $request)
+    public function store(StoreUpdateProdutosFormRequest $request)
     {
         $data = $request->all();
         //$data['password'] = bcrypt($request->password);
@@ -46,13 +45,11 @@ class ProdutosController extends Controller
         return view ('produtos.edit', compact('produtos'));
     }
 
-    public function update(StoreUpdateUserFormRequest $request, $id)
+    public function update(StoreUpdateProdutosFormRequest $request, $id)
     {
         if(!$produtos = Produtos::find($id))
             return redirect()->route('produtos.index');
         $data = $request->only('name','valor','quantidade');
-        //if($request->password)
-        //    $data['password'] = bcrypt($request->password);
 
         $produtos->update($data);
         return redirect()->route('produtos.index');
