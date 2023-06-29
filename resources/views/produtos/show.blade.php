@@ -11,7 +11,7 @@
 </ul>
     <form action="{{route('produtos.destroy',$produtos->id) }}" method="POST">
         @method('DELETE')
-        @csrf <!-- gera um token para fazer a autenticação -->
+        @csrf
         <button type="submit"> Deletar </button>
     </form>
 @endsection

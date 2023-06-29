@@ -15,9 +15,9 @@ class ProdutosSeeders extends Seeder
     public function run()
     {
         Produtos::create([
-            'name' => 'O mágico de Oz',
-            'valor' => '70.00R$',
-            'quantidade' => '16',
+            'name' => 'Papel toalha',
+            'valor' => '120.00R$',
+            'quantidade' => '179',
         ]);
     }
 }

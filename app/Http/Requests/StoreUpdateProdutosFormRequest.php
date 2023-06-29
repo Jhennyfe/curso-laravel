@@ -13,7 +13,7 @@ class StoreUpdateUserFormRequest extends FormRequest
      */
     public function authorize()
     {
-        return true;  //autorizo todos a executar essa validação
+        return true;  
     }
 
     /**
@@ -33,7 +33,7 @@ class StoreUpdateUserFormRequest extends FormRequest
             ],
             'valor' => [
                 'required',
-                'string',  //forma 2 de fazer
+                'string',
             ],
             'quantidade' => [
                 'required',

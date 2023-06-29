@@ -15,5 +15,4 @@ class Produtos extends Model
         'quantidade',
     ];
 
-    // Definir outros métodos e relacionamentos relevantes aqui
 }

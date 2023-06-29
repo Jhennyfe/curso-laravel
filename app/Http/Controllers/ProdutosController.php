@@ -11,11 +11,11 @@ class ProdutosController extends Controller
 {
     public function index()
     {
-        //recupera os dados e salva na variavel $users
+    
         $produtos = Produtos::get();
         
         return view ('produtos.index', compact('produtos'));
-        //aqui ele retorna na view os dados que puxou na variavel $users, coloca num array e manda pra view index
+        
         
     }
 
@@ -24,7 +24,7 @@ class ProdutosController extends Controller
         if(!$produtos = Produtos::find($id))
             return redirect()->route('produtos.index');
         
-        return view ('produtos.show', compact('produtos'));//compact cria um array da variavel
+        return view ('produtos.show', compact('produtos'));
         
     }
     public function create()
@@ -34,7 +34,6 @@ class ProdutosController extends Controller
     public function store(StoreUpdateProdutosFormRequest $request)
     {
         $data = $request->all();
-        //$data['password'] = bcrypt($request->password);
         Produtos::create($data);
         return redirect()->route('produtos.index');
     }
